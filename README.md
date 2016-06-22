@@ -1,5 +1,6 @@
 # StingRA
 Chrome Extension to lookup astronomical objects for quick preview and links to WWT &amp; Simbad
+
 Created at dot astronomy 8, Oxford UK
 
 To install:
