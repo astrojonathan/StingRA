@@ -17,9 +17,9 @@ function parseResults(xml) {
     var data = xmlDoc.getElementsByTagName("Sesame")[0].getElementsByTagName("Target")[0].getElementsByTagName("Resolver")[0];
     var name = data.getElementsByTagName("oname")[0].innerHTML;
     ra = data.getElementsByTagName("jradeg")[0].innerHTML;
-    ra=Math.round(ra*10000.0)/10000.0;
+    ras=Math.round(ra*10000.0)/10000.0;
     dec = data.getElementsByTagName("jdedeg")[0].innerHTML;
-    dec=Math.round(dec*10000.0)/10000.0;
+    decs=Math.round(dec*10000.0)/10000.0;
     radec = data.getElementsByTagName("jpos")[0].innerHTML;
     rahms=radec.split(' ')[0];
     decdms=radec.split(' ')[1];
@@ -31,8 +31,8 @@ function parseResults(xml) {
     var hdDec = hd.split(" ")[1];
 
     document.getElementById("objectname").innerHTML = name;
-    document.getElementById("ra").innerHTML = ra;
-    document.getElementById("dec").innerHTML = dec;
+    document.getElementById("ra").innerHTML = ras;
+    document.getElementById("dec").innerHTML = decs;
     document.getElementById("rahms").innerHTML = rahms;
     document.getElementById("decdms").innerHTML = decdms;
     document.getElementById("dssimage").src = "http://archive.stsci.edu/cgi-bin/dss_search?v=poss2ukstu_red&r=" + ra + "&d=" + dec + "&e=J2000&h=3.4&w=3.4&f=gif&c=none&fov=NONE&v3=";
