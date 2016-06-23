@@ -40,6 +40,8 @@ function parseResults(xml) {
     document.getElementById("wwtlink").target = "_blank";
     document.getElementById("simbadlink").href = "http://simbad.u-strasbg.fr/simbad/sim-coo?Coord=" + ra + "+" + dec + "&Radius=2m&Radius.unit=arcmin&output.max=1&output.format=html";
     document.getElementById("simbadlink").target = "_blank";
+    document.getElementById("adslink").href = "http://adsabs.harvard.edu/cgi-bin/abs_connect?db_key=AST&sim_query=YES&object=" + name;
+    document.getElementById("adslink").target = "_blank";
 
     setSkyChart();
 
