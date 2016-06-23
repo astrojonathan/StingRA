@@ -1,4 +1,6 @@
 # StingRA
+![badge-img](https://img.shields.io/badge/Made%20at-%23dotastro-brightgreen.svg)
+
 
 ![alt tag](StingRA400px.png)
 
@@ -13,6 +15,3 @@ To install:
   4. Start StingRA-ing!
 
 ![alt tag](ScreenShot.png)
-
-#dotastro 8
-![badge-img](https://img.shields.io/badge/Made%20at-%23dotastro-brightgreen.svg)
