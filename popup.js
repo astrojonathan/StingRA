@@ -17,8 +17,6 @@ function parseResults(xml) {
     var data = xmlDoc.getElementsByTagName("Sesame")[0].getElementsByTagName("Target")[0].getElementsByTagName("Resolver")[0];
     var name = data.getElementsByTagName("oname")[0].innerHTML;
     ra = data.getElementsByTagName("jradeg")[0].innerHTML;
-    dec = data.getElementsByTagName("jdedeg")[0].innerHTML;
-    ra = data.getElementsByTagName("jradeg")[0].innerHTML;
     ra=Math.round(ra*10000.0)/10000.0;
     dec = data.getElementsByTagName("jdedeg")[0].innerHTML;
     dec=Math.round(dec*10000.0)/10000.0;
