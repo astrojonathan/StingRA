@@ -18,7 +18,13 @@ function parseResults(xml) {
     var name = data.getElementsByTagName("oname")[0].innerHTML;
     ra = data.getElementsByTagName("jradeg")[0].innerHTML;
     dec = data.getElementsByTagName("jdedeg")[0].innerHTML;
-
+    ra = data.getElementsByTagName("jradeg")[0].innerHTML;
+    ra=Math.round(ra*10000.0)/10000.0;
+    dec = data.getElementsByTagName("jdedeg")[0].innerHTML;
+    dec=Math.round(dec*10000.0)/10000.0;
+    radec = data.getElementsByTagName("jpos")[0].innerHTML;
+    rahms=radec.split(' ')[0];
+    decdms=radec.split(' ')[1];
    
 
 
@@ -29,6 +35,8 @@ function parseResults(xml) {
     document.getElementById("objectname").innerHTML = name;
     document.getElementById("ra").innerHTML = ra;
     document.getElementById("dec").innerHTML = dec;
+    document.getElementById("rahms").innerHTML = rahms;
+    document.getElementById("decdms").innerHTML = decdms;
     document.getElementById("dssimage").src = "http://archive.stsci.edu/cgi-bin/dss_search?v=poss2ukstu_red&r=" + ra + "&d=" + dec + "&e=J2000&h=3.4&w=3.4&f=gif&c=none&fov=NONE&v3=";
     document.getElementById("wwtlink").href = "http://www.worldwidetelescope.org/webclient/#/ra=" + Number(ra) / 15 + "&dec=" + dec + "&fov=0.29329";
     document.getElementById("wwtlink").target = "_blank";
