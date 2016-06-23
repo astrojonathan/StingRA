@@ -40,28 +40,26 @@ function parseResults(xml) {
     var mags = data.getElementsByTagName("mag");
 
     var magDiv = document.getElementById("mags");
+   // alert(mags);
+    for(let mag of mags) {
+        var lDiv = document.createElement('div');
+        
+        lDiv.id = mag.getAttribute("band");
+        
+        lDiv.className = 'label';
+        lDiv.innerHTML = mag.getAttribute("band") + ": ";
+        magDiv.appendChild(lDiv);
+
+        var vDiv = document.createElement('div');
+      
+        vDiv.className = 'data';
    
-    if (mags != null) {
+        vDiv.innerHTML = mag.getElementsByTagName("v")[0].innerHTML;
 
-        for(let mag of mags) {
-            var lDiv = document.createElement('div');
+        magDiv.appendChild(vDiv);
 
-            lDiv.id = mag.getAttribute("band");
-
-            lDiv.className = 'label';
-            lDiv.innerHTML = mag.getAttribute("band") + ": ";
-            magDiv.appendChild(lDiv);
-
-            var vDiv = document.createElement('div');
-
-            vDiv.className = 'data';
-
-            vDiv.innerHTML = mag.getElementsByTagName("v")[0].innerHTML;
-
-            magDiv.appendChild(vDiv);
-
-            magDiv.appendChild(document.createElement('br'));
-        }
+        magDiv.appendChild(document.createElement('br'));
+       
     }
 }
 
@@ -126,10 +124,9 @@ function showPosition(position) {
 }
 
 function setSkyChart() {
-    document.getElementById("skychart").src = "http://www.worldwidetelescope.org/wwtweb/starchart.aspx?lat=" + lat + "&lng=" + lng + "&dec=" + dec + "&ra=" + ra + "&width=200&height=200";
-    document.getElementById("chartlink").href = "http://www.worldwidetelescope.org/wwtweb/starchart.aspx?lat=" + lat + "&lng=" + lng + "&dec=" + dec + "&ra=" + ra + "&width=800&height=800";
-    document.getElementById("chartlink").target = "_blank";
-    document.getElementById("lat").innerHTML = lat.toString();
-    document.getElementById("lng").innerHTML = lng.toString();
+    document.getElementById("skychart").src = "http://www.worldwidetelescope.org/wwtweb/starchart.aspx?lat=" + lat + "&lng=" + lng + "&dec=85&ra=10&width=200&height=200";
+   
+    document.getElementById("lat").innerHTML = Math.round(lat*100)/100.0.toString();
+    document.getElementById("lng").innerHTML = Math.round(lng*100)/100.0.toString();
    
 }

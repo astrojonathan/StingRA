@@ -4,6 +4,7 @@ html, body {
 	width: 440px;
 	height: 520px;
     overflow: hidden;
+    background-color: #ecefe7
 }
 p {
 	padding:4px;
@@ -42,13 +43,20 @@ p {
     padding-left: 15px;
 }
 
+.link {
+    color: #00628B;
+    padding:4px;
+	font:14px 'Trebuchet MS',Verdana;
+	margin:0 0 4px;
+    padding-left: 15px;
+}
+
 .content {
     color: #000000;
 	min-height: 100%;
 	position: relative;
 	overflow: hidden;
 	z-index: 0; 
- 
 }
 
 
