@@ -126,7 +126,7 @@ function showPosition(position) {
 function setSkyChart() {
     document.getElementById("skychart").src = "http://www.worldwidetelescope.org/wwtweb/starchart.aspx?lat=" + lat + "&lng=" + lng + "&dec=85&ra=10&width=200&height=200";
    
-    document.getElementById("lat").innerHTML = lat.toString();
-    document.getElementById("lng").innerHTML = lng.toString();
+    document.getElementById("lat").innerHTML = Math.round(lat*100)/100.0.toString();
+    document.getElementById("lng").innerHTML = Math.round(lng*100)/100.0.toString();
    
 }
